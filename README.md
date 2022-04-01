@@ -22,26 +22,24 @@
 
 |Column           |Type        |Options                         |
 |-----------------|------------|--------------------------------|
-| goods           | string     | null: false                    |
 | catch_copy      | text       | null: false                    |
 | category_id     | integer    | null: false                    |
 | condition_id    | integer    | null: false                    |
 | burden_id       | integer    | null: false                    |
 | area_id         | integer    | null: false                    |
 | delivery_day_id | integer    | null: false                    |
-| user            | references | null: false, foreign_key: true |
 | price           | integer    | null: false                    |
 
 ### Association
  belongs_to :user
 
 
-## purchasesテーブル
+## user_itemsテーブル
 
-|Column     |Type        |Options                         |
-|-----------|------------|--------------------------------|
-| buyer     | references | null: false, foreign_key: true |
-| buy_goods | string     | null: false                    |
+|Column |Type        |Options                         |
+|-------|------------|--------------------------------|
+| user  | references | null: false, foreign_key: true |
+| goods | references | null: false, foreign_key: true |
 
 ### Association
  belongs_to :user
