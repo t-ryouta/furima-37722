@@ -34,7 +34,7 @@
 
 ### Association
  belongs_to :user
- has_one :user_items
+ has_one :user_item
 
 
 ## user_itemsテーブル
