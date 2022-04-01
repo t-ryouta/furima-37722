@@ -22,7 +22,7 @@
 
 |Column           |Type        |Options                         |
 |-----------------|------------|--------------------------------|
-| goods           | strings    | null: false                    |
+| goods           | string     | null: false                    |
 | catch_copy      | text       | null: false                    |
 | category_id     | integer    | null: false                    |
 | condition_id    | integer    | null: false                    |
