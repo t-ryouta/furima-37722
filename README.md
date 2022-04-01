@@ -20,16 +20,16 @@
 
 ## itemsテーブル
 
-|Column         |Type        |Options                         |
-|---------------|------------|--------------------------------|
-| goods         | string     | null: false                    |
-| catch_copy    | text       | null: false                    |
-| category      | string     | null: false                    |
-| condition     | string     | null: false                    |
-| burden        | string     | null: false                    |
-| area          | string     | null: false                    |
-| delivery_days | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
+|Column           |Type        |Options                         |
+|-----------------|------------|--------------------------------|
+| goods           | string     | null: false                    |
+| catch_copy      | text       | null: false                    |
+| category_id     | integer    | null: false                    |
+| condition_id    | integer    | null: false                    |
+| burden_id       | integer    | null: false                    |
+| area_id         | integer    | null: false                    |
+| delivery_day_id | integer    | null: false                    |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
  belongs_to :user
