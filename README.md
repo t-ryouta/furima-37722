@@ -33,6 +33,7 @@
 
 ### Association
  belongs_to :user
+ has_one :user_items
 
 
 ## user_itemsテーブル
