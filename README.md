@@ -62,4 +62,4 @@
 | user_item     | references | null: false, foreign_key: true |
 
 ### Association
- belongs_to :user_items
+ belongs_to :user_item
