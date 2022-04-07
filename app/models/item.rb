@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   belongs_to :condition
   belongs_to :burden
   belongs_to :area
+  belongs_to :delivery_day
 
   belongs_to :user
 end
