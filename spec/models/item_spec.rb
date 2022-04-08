@@ -82,7 +82,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
-      it 'priceは全角文字を含むパスワードでは登録できない' do
+      it 'priceは全角文字を含む文字では登録できない' do
         @item.price = '３００'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is out of setting range')
