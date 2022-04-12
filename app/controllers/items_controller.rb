@@ -27,6 +27,11 @@ class ItemsController < ApplicationController
     redirect_to root_path unless @item.user_id == current_user.id
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+
   def update
     if @item.update(item_params)
       redirect_to item_path
