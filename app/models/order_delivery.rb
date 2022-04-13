@@ -1,6 +1,6 @@
 class OrderDelivery
   include ActiveModel::Model
-  attr_accessour :user_id, :item_id, :post_code, :area_id, :city, :address, :building_name, :phone_number, :user_item
+  attr_accessor :user_id, :item_id, :post_code, :area_id, :city, :address, :building_name, :phone_number, :order
   with_options presence: true do
     validates :user_id
     validates :item_id
@@ -10,7 +10,7 @@ class OrderDelivery
     validates :address
     validates :user_item
   end
-   with_options presence: true, format {with: /\A\d{10,11}\z/, message: "is too short" do
+   with_options presence: true, format: {with: /\A\d{10,11}\z/, message: "is too short" } do
     validates :phone_number, numericality: {only_integer: true, message: "is invalid. Input only number"}
   end
 
