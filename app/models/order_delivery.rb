@@ -8,7 +8,7 @@ class OrderDelivery
     validates :area_id, numericality: {other_than: 0, message: "can't be blank"}
     validates :city
     validates :address
-    validates :user_item
+    validates :order
   end
    with_options presence: true, format: {with: /\A\d{10,11}\z/, message: "is too short" } do
     validates :phone_number, numericality: {only_integer: true, message: "is invalid. Input only number"}
@@ -17,7 +17,7 @@ class OrderDelivery
   def save
     def save
       order = Order.create(user_id: user_id, item_id: item_id)
-      Delivery.create(post_code: post_code, area_id: area_id, city: city, address: address, building_name: building_name, phone_number: phone_number, user_item: user_item)
+      Delivery.create(post_code: post_code, area_id: area_id, city: city, address: address, building_name: building_name, phone_number: phone_number, order: order)
     end
   end
 end
