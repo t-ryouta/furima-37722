@@ -13,4 +13,11 @@ class OrderDelivery
    with_options presence: true, format {with: /\A\d{10,11}\z/, message: "is too short" do
     validates :phone_number, numericality: {only_integer: true, message: "is invalid. Input only number"}
   end
+
+  def save
+    def save
+      order = Order.create(user_id: user_id, item_id: item_id)
+      Delivery.create(post_code: post_code, area_id: area_id, city: city, address: address, building_name: building_name, phone_number: phone_number, user_item: user_item)
+    end
+  end
 end
