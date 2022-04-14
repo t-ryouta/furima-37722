@@ -20,7 +20,7 @@ RSpec.describe OrderDelivery, type: :model do
     end
 
     context '内容に問題がある場合' do
-      it 'tokenが空だと保存できないこと'do
+      it 'tokenが空だと保存できないこと' do
         @order_delivery.token = ''
         @order_delivery.valid?
         expect(@order_delivery.errors.full_messages).to include("Token can't be blank")
