@@ -1,12 +1,10 @@
 class OrdersController < ApplicationController
   def index
     @order_delivery = OrderDelivery.new
-    @items = Item.all
     @items = Item.find(params[:item_id])
   end
 
   def create
-    @items = Item.all
     @items = Item.find(params[:item_id])
     @order_delivery = OrderDelivery.new(order_params)
     if @order_delivery.valid?
