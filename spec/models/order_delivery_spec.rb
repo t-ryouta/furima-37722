@@ -60,6 +60,11 @@ RSpec.describe OrderDelivery, type: :model do
         @order_delivery.valid?
         expect(@order_delivery.errors.full_messages).to include('Phone number is too short')
       end
+      it 'phone_numberは12桁以上では保存できない' do
+        @order_delivery.phone_number = '123456789012'
+        @order_delivery.valid?
+        expect(@order_delivery.errors.full_messages).to include('Phone number is too short')
+      end
       it 'phone_numberは全角数字では保存できない' do
         @order_delivery.phone_number = '０９０１２３４５６７８'
         @order_delivery.valid?
