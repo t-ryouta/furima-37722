@@ -2,12 +2,12 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   def index
     @order_delivery = OrderDelivery.new
-    @items = Item.find(params[:item_id])
-    redirect_to root_path if @items.user_id == current_user.id || !@items.order.nil?
+    @item = Item.find(params[:item_id])
+    redirect_to root_path if @item.user_id == current_user.id || !@item.order.nil?
   end
 
   def create
-    @items = Item.find(params[:item_id])
+    @item = Item.find(params[:item_id])
     @order_delivery = OrderDelivery.new(order_params)
     if @order_delivery.valid?
       pay_item
@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
-      amount: @items.price,
+      amount: @item.price,
       card: order_params[:token],
       currency: 'jpy'
     )
